@@ -1,0 +1,26 @@
+<div class="container">
+  <h1><%= @task.title %></h1>
+  <div class="edit-task">
+    <i class="fas fa-edit"></i>
+    <%= link_to "Edit this task", tasks_edit_path(@task) %>
+  </div>
+</div>
+
+<p id="task-details"><%= @task.details %></p>
+
+<!-- <div class="task-done-checkbox">
+  <input type="checkbox">
+  <p>This task is not completed yet</p>
+</div> -->
+
+<div class="completed">
+  <% if @task.completed %>
+    <i class="fa fa-check-square-o padded"><%= ' this task is completed' %></i>
+  <% else %>
+    <i class="fa fa-square-o padded"><%= ' this task is not completed yet' %></i>
+  <% end %>
+</div>
+
+<%= link_to "Back to list", tasks_path %>
+
+
